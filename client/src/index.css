@@ -1,0 +1,132 @@
+html,
+body {
+  overflow: hidden;
+}
+
+.main {
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+}
+
+.user-select-none {
+  user-select: none;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.modal-login {
+  max-width: 23% !important;
+}
+
+.modal-admin {
+  margin-top: 8px !important;
+  max-width: 95% !important;
+}
+
+.card-body-admin {
+  height: 456px;
+  overflow-y: auto;
+}
+.cards-body-admin-productos {
+  height: 535px !important;
+  overflow-y: auto !important;
+}
+.modal-form-comedor {
+  margin-top: 40px !important;
+  max-width: 30% !important;
+}
+.modal-form-domicilio {
+  margin-top: 20px !important;
+  max-width: 70% !important;
+}
+
+.body-dividir-cuenta {
+  height: 460px !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
+.modal-captura {
+  margin-top: 5px !important;
+  max-width: 99.2% !important;
+}
+.lista-items-captura {
+  max-width: 33% !important;
+  height: 600px !important;
+}
+.categorias-captura {
+  max-width: 12% !important;
+  height: 600px !important;
+  overflow-y: auto !important;
+}
+.subcategorias-modal {
+  max-width: 56% !important;
+  height: 600px !important;
+  overflow-x: hidden !important;
+}
+.myBtn {
+  height: 70px !important;
+  width: 180px;
+  white-space: normal;
+}
+.myBtnP {
+  height: 70px !important;
+  width: 172px;
+  white-space: normal;
+}
+.modal-cardbody-list-items {
+  height: 470px !important;
+  overflow-y: scroll !important;
+}
+.card-historial {
+  height: 430px;
+  overflow-x: scroll;
+}
+.otros-medios-modal {
+  margin-top: 10px !important;
+  max-width: 25% !important;
+}
+.otros-medios-modal-body {
+  height: 240px;
+  overflow-y: scroll;
+}
+.modals-admin-tickets {
+  margin-top: 10px !important;
+  max-width: 32% !important;
+}
+.modal-asignar-rep {
+  margin-top: 2% !important;
+  max-width: 32% !important;
+}
+.modal-pagar-cuenta {
+  margin-top: 2% !important;
+  max-width: 32% !important;
+}
+.info-dom-modal {
+  margin-top: 1% !important;
+  max-width: 40% !important;
+}
+.dividir-cuenta-modal {
+  margin-top: 1% !important;
+  max-width: 64% !important;
+}
+.cuentas-cerradas-modal {
+  margin-top: 1.5% !important;
+  max-width: 97% !important;
+}
+.caja-modal {
+  margin-top: 1.5% !important;
+  max-width: 85% !important;
+}
+.monitor-venta-modal {
+  margin-top: 2% !important;
+  max-width: 70% !important;
+}
+.declaracion-modal {
+  margin-top: 0.5% !important;
+  max-width: 60% !important;
+}

@@ -1,0 +1,19 @@
+.cuentasAbiertas {
+  width: 87% !important;
+  overflow-y: auto;
+  background-image: url("../../assets/logotipo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.botoneraLateral {
+  width: 13% !important;
+}
+.bodyItems {
+  height: 460px !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
+.cardBodyLogin {
+  overflow-y: auto;
+}
