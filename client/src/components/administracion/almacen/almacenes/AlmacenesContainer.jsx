@@ -67,6 +67,7 @@ function AlmacenesContainer() {
             almacenes={almacenes}
             createAlmacen={createAlmacen}
             deleteAlmacen={deleteAlmacen}
+            updateAlmacen={updateAlmacen}
             selectAlmacen={selectAlmacen}
           />
           <FormInsumos

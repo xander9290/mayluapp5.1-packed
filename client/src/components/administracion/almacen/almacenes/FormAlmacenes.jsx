@@ -10,6 +10,7 @@ function FormAlmacenes({
   almacenes,
   createAlmacen,
   deleteAlmacen,
+  updateAlmacen,
   selectAlmacen,
 }) {
   const [values, setValues] = useState(initValues);
@@ -20,12 +21,20 @@ function FormAlmacenes({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (verifyExiste(almacenes, values.name.toLowerCase().trim())) {
-      alert("Nombre no disponible");
-      return;
+    if (values._id) {
+      updateAlmacen(values._id, values);
+    } else {
+      if (verifyExiste(almacenes, values.name.toLowerCase().trim())) {
+        alert("Nombre no disponible");
+        return;
+      }
+      createAlmacen(values);
     }
-    createAlmacen(values);
     cancelar();
+  };
+
+  const editarAlmacen = (al) => {
+    setValues(al);
   };
 
   const eliminarAlmacen = (id) => {
@@ -45,7 +54,7 @@ function FormAlmacenes({
         </h5>
         <form onSubmit={handleSubmit} className="d-flex">
           <input
-            className="form-control"
+            className="form-control form-control-sm"
             type="text"
             name="name"
             value={values.name}
@@ -54,8 +63,24 @@ function FormAlmacenes({
             placeholder="Nuevo"
             required
           />
-          <button title="AGREGAR" className="btn btn-primary" type="submit">
-            <i className="bi bi-plus-circle"></i>
+          <button
+            title={values._id ? "EDITAR" : "AGREGAR"}
+            className="btn btn-primary btn-sm"
+            type="submit"
+          >
+            {values._id ? (
+              <i className="bi bi-pencil"></i>
+            ) : (
+              <i className="bi bi-plus-circle"></i>
+            )}
+          </button>
+          <button
+            onClick={cancelar}
+            title="CANCELAR"
+            className="btn btn-warning btn-sm ms-1"
+            type="reset"
+          >
+            <i className="bi bi-x-circle"></i>
           </button>
         </form>
       </div>
@@ -71,20 +96,30 @@ function FormAlmacenes({
                 al._id === almacen._id ? "bg-info" : "bg-white"
               } d-flex justify-content-between align-items-center`}
             >
+              <div>
+                <button
+                  onClick={() => eliminarAlmacen(al._id)}
+                  className="btn btn-danger btn-sm me-2"
+                  type="button"
+                >
+                  <i className="bi bi-trash"></i>
+                </button>
+                <button
+                  onClick={() => editarAlmacen(al)}
+                  title="EDITAR"
+                  className="btn btn-primary btn-sm"
+                  type="submit"
+                >
+                  <i className="bi bi-pencil"></i>
+                </button>
+              </div>
               <span className="card-text text-dark text-uppercase fw-bold">
                 {al.name}
               </span>
               <button
-                onClick={() => eliminarAlmacen(al._id)}
-                className="btn btn-danger"
-                type="button"
-              >
-                <i className="bi bi-trash"></i>
-              </button>
-              <button
                 onClick={() => selectAlmacen(al._id)}
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-primary btn-sm"
               >
                 <i className="bi bi-arrow-right-square"></i>
               </button>
