@@ -281,8 +281,11 @@ function TicketCliente({ show, onHide, cuenta }) {
               )}
               {cuenta.cashInfo.tarjeta > 0 && (
                 <li>
-                  Pago con tarjeta ${cuenta.cashInfo.tarjeta} +
-                  {cuenta.cardInfo.porcentaje}%: ${cuenta.cardInfo.total}
+                  <div className="d-flex flex-column">
+                    <div>Pago con tarjeta</div>
+                    <div>Comisión: +${cuenta.cardInfo.porcentaje}</div>
+                    <div>total tarjeta: ${cuenta.cardInfo.total}</div>
+                  </div>
                 </li>
               )}
               {cuenta.otroMedio.total > 0 && (

@@ -143,20 +143,21 @@ function ModalPagar({ show, onHide, targetModalTicketCliente, closeDetalle }) {
 
   const calcularComision = () => {
     setError(null);
-    let porcentaje = prompt(
-      "Establece el porcentaje de la comisión %".toUpperCase()
-    );
-    if (!porcentaje) return;
-    if (parseFloat(porcentaje) === 0) {
+    let comision1 = parseFloat(prompt("comisión %".toUpperCase()));
+    let iva = parseFloat(prompt("IVA de comisión".toUpperCase(), 16));
+    if (!comision1) return;
+    if (isNaN(comision1)) return;
+    if (comision1 === 0) {
       setTarjeta(initialTarjeta);
       return;
     }
-    porcentaje = parseFloat(porcentaje);
 
-    const comision = Math.round((Math.abs(saldo) * porcentaje) / 100);
+    let totalComision = parseFloat((Math.abs(saldo) * comision1) / 100);
+    let totalIva = parseFloat((totalComision * iva) / 100);
+    let comision = Math.ceil(totalComision + totalIva);
     setTarjeta({
       ...tarjeta,
-      porcentaje,
+      porcentaje: comision,
       comision,
       total: comision + Math.abs(saldo),
     });
